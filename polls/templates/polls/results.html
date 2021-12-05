@@ -1,0 +1,17 @@
+{% extends 'polls/Base.html' %}
+{% block title %}
+    <h1><p><strong>{{ question.question_text }} ?</strong></p></h1>
+{% endblock %}
+
+{% block content %}
+    <strong><p>You have completed your poll, and here are the final results</p></strong>
+    <ul>
+    {% for choice in question.choice_set.all %}
+        <li><h3>{{ choice.choice_text }} -- {{ choice.votes }} vote {{ choice.votes|pluralize }}</h3></li>
+    {% endfor %}
+    </ul>
+    <button type="button" class="btn btn-primary" style="margin-top: 20px;">
+        <a href="{% url 'polls:detail' question.id %}" style="text-decoration: none; color: yellow;">Vote again?</a>
+    </button>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'polls/Base.html' %}
+{% block title %}
+    <h1><p><strong>Polls List</strong></p></h1>
+{% endblock %}
+
+{% if latest_question_list %}
+    {% block content %}
+        <div class="list-item">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for question in latest_question_list %}
+                    <div class="col">
+                        <div class="card shadow-sm" style="background-color: #efefef;">
+                            <img src="../static/polls/images/{{ question.question_text }}.jpg" width="auto" height="225px">
+                                <h4 style="padding: 10px 0px 0px 20px;">
+                                    <a class="question" href="{% url 'polls:detail' question.id %}">{{ question.question_text }} ?</a>
+                                </h4>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    This is a wider card with supporting text below as a natural lead-in to additional content.
+                                    This content is a little bit longer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endblock %}
+{% else %}
+    {% block conten %}
+    <p>No polls are available.</p>
+    {% endblock %}
+{% endif %}

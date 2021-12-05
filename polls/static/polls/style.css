@@ -1,0 +1,39 @@
+* {
+    font-family: "Comic Sans MS"
+}
+header {
+   font-size: large;
+}
+.title {
+    background-color: #0d6efd;
+}
+a {
+    color: yellow;
+    text-decoration: none;
+}
+h1 p {
+    color: yellow;
+}
+.question {
+    color: #0d6efd;
+    text-decoration: none;
+}
+.navbar-toggler:hover {
+    background-color: yellow;
+}
+.nav-link {
+    border-bottom-left-radius: 13px;
+    border-top-right-radius: 13px;
+    color: black;
+}
+.nav-link:hover {
+    background-color: yellow;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background: white url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
